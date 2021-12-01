@@ -1,0 +1,156 @@
+:root {
+	--padding-value: 30px;
+	--padding-mobile-value: 15px;
+}
+
+.contact {
+	/* padding-top: 8px; */
+}
+
+.contact_active {
+	padding: 25px 30px 17px;
+}
+
+.contact__wrapper {
+	display: flex;
+	min-height: 37px;
+	width: 100%;
+	/* margin-top: 25px; */
+
+	background-color: #fff;
+}
+
+.contact__wrapper:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.contact__wrapper:last-child {
+	margin-bottom: 25px;
+}
+
+.contact__type-list {
+	position: relative;
+	min-width: 123px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.contact__type-list_open {
+	z-index: 1;
+}
+
+.contact__type-item {
+	position: absolute;
+
+	list-style: none;
+	width: 100%;
+	/* min-height: 37px; */
+	padding: 10px 0 10px 12px;
+	display: none;
+	align-items: center;
+	border-left: 1px solid #c8c5d1;
+	border-right: 1px solid #c8c5d1;
+	cursor: pointer;
+
+	font-size: 12px;
+
+	background: #f4f3f6;
+}
+
+.contact__type-item:last-child {
+	border-bottom: 1px solid #c8c5d1;
+}
+
+.contact__type-list_open .contact__type-item {
+	display: flex;
+}
+
+.contact__type-list_open .contact__type-item:hover {
+	cursor: pointer;
+	background-color: #c8c5d1;
+}
+
+.contact__type-item_top {
+	position: relative;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #c8c5d1;
+	background: #e7e5eb;
+}
+
+.contact__type-item_top::before {
+	content: "";
+	position: absolute;
+	top: 16px;
+	right: 15px;
+
+	border-top: 1px solid #9873ff;
+	border-left: 1px solid #9873ff;
+	width: 6px;
+	height: 6px;
+	transform: rotate(225deg);
+	transition: transform 0.3s linear;
+}
+
+.contact__type-list_open .contact__type-item_top::before {
+	transform: rotate(45deg);
+}
+
+.contact__input {
+	border: none;
+	border-top: 1px solid #c8c5d1;
+	border-bottom: 1px solid #c8c5d1;
+	width: calc(100% - 123px - 30px);
+	padding-left: 6px;
+}
+
+.contact__remove-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #c8c5d1;
+	background: #e7e5eb;
+	cursor: pointer;
+	transition: border 0.3s linear;
+	min-width: 30px;
+}
+
+.contact__remove-btn:hover {
+	border-color: #f06a4d;
+	background-image: url("../img/cancel-hover-icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 10;
+}
+
+.contact__remove-btn:hover > img {
+	opacity: 0;
+}
+
+@media (max-width: 767px) {
+	.contact_active {
+		padding-left: var(--padding-mobile-value);
+		padding-right: var(--padding-mobile-value);
+	}
+
+	.contact__type-list {
+		width: 110px;
+		min-width: 110px;
+	}
+
+	.contact__input {
+		width: calc(100% - 110px);
+	}
+
+	.contact__remove-btn {
+		/* display: none; */
+	}
+
+	.contact__remove-btn_active {
+		display: flex;
+	}
+}

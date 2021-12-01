@@ -1,0 +1,90 @@
+.tooltip {
+	position: absolute;
+
+	min-width       : 200px;
+	width           : auto;
+	align-items     : center;
+	justify-content : flex-start;
+	display         : none;
+	cursor          : pointer;
+	z-index         : 100;
+	background-color: #333333;
+}
+
+.tooltip_active {
+	display: flex;
+}
+
+.tooltip_active .tooltip-content {
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	animation      : tooltip 0.7s ease forwards;
+	flex-wrap      : nowrap;
+}
+
+.tooltip-content {
+	position : absolute;
+	transform: translateX(-50%);
+
+	display: none;
+	opacity: 0;
+
+	width  : auto;
+	padding: 5px;
+
+	color           : #fff;
+	background-color: #333333;
+}
+
+.tooltip-arrow {
+	position : absolute;
+	z-index  : 1;
+	bottom   : -7px;
+	left     : 50%;
+	transform: translateX(-50%);
+	width    : 14px;
+	height   : 14px;
+	overflow : hidden;
+}
+
+.tooltip-arrow:before {
+	content         : "";
+	position        : absolute;
+	top             : -4px;
+	left            : 50%;
+	width           : 14px;
+	height          : 14px;
+	background-color: #333333;
+	transform       : translateX(-50%) rotate(45deg);
+	box-shadow      : 8px 8px 9px -4px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip__text {
+	display  : flex;
+	flex-wrap: nowrap;
+}
+
+.tooltip__text a {
+	color          : #9873FF;
+	text-decoration: underline;
+}
+
+.tooltip__contact-type {
+	margin-right: 5px;
+
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.tooltip__contact-type + a {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+@keyframes tooltip {
+	100% {
+		opacity  : 1;
+		/* bottom: calc(100% + 30px); */
+	}
+}

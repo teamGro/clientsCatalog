@@ -1,0 +1,10 @@
+.toast__wrapper {
+	position: absolute;
+	top: 20px;
+	width: 100%;
+}
+
+.toast {
+	position: absolute;
+	right: 10px;
+}

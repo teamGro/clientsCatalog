@@ -1,0 +1,67 @@
+.load {
+}
+
+.load__wrapp {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px 10px 0;
+	padding: 20px 20px 20px;
+	border-radius: 5px;
+
+	text-align: center;
+
+	background-color: transparent;
+}
+
+.load__wrapp_active {
+	display: flex;
+}
+
+.load__ring {
+	position: relative;
+
+	width: 45px;
+	height: 45px;
+	margin: 0 auto;
+	border: 4px solid #9873ff;
+	border-radius: 100%;
+}
+
+.load__ball-holder {
+	position: absolute;
+	left: 17px;
+	top: 0px;
+
+	width: 12px;
+	height: 45px;
+}
+
+.load__ball {
+	position: absolute;
+	top: -11px;
+	left: 0;
+
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+
+	background: #9873ff;
+}
+
+.load .load__ball-holder {
+	animation: loading 1.3s linear infinite;
+}
+
+@keyframes loading {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
